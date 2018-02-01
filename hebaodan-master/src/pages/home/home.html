@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/img/app-title.png" style="width: 40vw;">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<div class="bottom-bar">
+  <button ion-button clear icon-only>
+    <ion-icon name="pie-outline"></ion-icon>
+  </button>
+  <div style="margin-bottom: -10rem;">
+    <a class="logo-button">
+      <img src="assets/img/logo.svg">
+    </a>
+  </div>
+  <button ion-button clear icon-only (click)="goMePage()">
+    <ion-icon name="settings-outline"></ion-icon>
+  </button>
+</div>
+
+
+<ion-content>
+  <div style="position: absolute;background-color: #FBFDFD;width: 100%;height: 10rem;z-index: 1"></div>
+  <div class="account-books">
+    <a class="account-book" (click)="viewBook(book.id)" *ngFor="let book of books">
+      <div class="img-holder background-image" [style.background-image]="'url(assets/img/book-cover/'+book.picture+'.jpg)'"></div>
+      <div class="account-book-name">
+        <p>{{book.name.toUpperCase()}}</p>
+      </div>
+    </a>
+    <a class="account-book" (click)="createBook()">
+      <div class="img-holder">
+        <ion-icon name="md-add"></ion-icon>
+      </div>
+      <div class="account-book-name">
+        <p>ADD</p>
+      </div>
+    </a>
+  </div>
+
+  <ion-list class="account-book-list">
+    <button ion-item>
+      <h2 ion-text color="primary">
+        AAAA
+      </h2>
+      <p>
+        BBB
+      </p>
+      <div item-end>
+        <div ion-text color="yolk" style="font-size: 3rem;text-align: right">89.8</div>
+        <div ion-text color="shadow" style="font-size: 1.2rem;text-align: right">CNY</div>
+      </div>
+    </button>
+  </ion-list>
+
+</ion-content>

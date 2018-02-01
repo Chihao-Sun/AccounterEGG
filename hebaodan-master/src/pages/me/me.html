@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ME</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="head">
+    <div class="name">
+      <ion-input class="plain" style="font-weight: bold;font-size: 2.4rem" [(ngModel)]="me.name"></ion-input>
+      <ion-input class="plain" style="font-size: 1.3rem" [(ngModel)]="me.career"></ion-input>
+    </div>
+    <img class="avatar" src="assets/img/avatar/1.jpg">
+  </div>
+  <ion-list>
+    <button ion-item (click)="doNothing()">
+      MY ACCOUNTS
+    </button>
+    <button ion-item (click)="doNothing()">
+      MY CONTACTS
+    </button>
+  </ion-list>
+  <ion-list>
+    <button ion-item (click)="doNothing()">
+      SETTINGS
+    </button>
+    <button ion-item (click)="doNothing()">
+      ADVICE
+    </button>
+    <button ion-item (click)="doNothing()">
+      HELP ME
+    </button>
+    <button ion-item (click)="doNothing()">
+      ABOUT US
+    </button>
+  </ion-list>
+  <div style="padding: 0 20px;">
+    <button ion-button block style="background-image: linear-gradient(89deg, rgba(26, 113, 224, 0.5) 0%, rgba(101, 82, 200, 0.5) 23%, rgba(141, 77, 232, 0.5) 57%, rgba(193, 125, 242, 0.5) 100%);;">LOG OUT</button>
+  </div>
+
+</ion-content>

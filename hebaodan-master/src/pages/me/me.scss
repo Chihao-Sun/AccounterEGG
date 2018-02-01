@@ -1,0 +1,29 @@
+@import "../../theme/variables";
+
+page-me {
+  .fixed-content{
+    background-image: linear-gradient(-1deg, rgba(126, 169, 224, 0.33) 23%, rgba(150, 140, 204, 0.28) 41%, rgba(198, 172, 234, 0.22) 66%, rgba(212, 180, 234, 0.11) 100%);
+  }
+  div.head{
+    position: relative;
+    height:25vh;
+    .name{
+      position: absolute;
+      bottom:5vw;
+      padding-left: 20px;
+      ion-input{
+        color: map_get($colors,primary);
+      }
+    }
+    img.avatar{
+      position: absolute;
+      z-index:10;
+      bottom:-5vw;
+      right: 8vw;
+      border-radius: 400px;
+      width: 30vw;
+      height:30vw;
+      border: 3px solid #ffffff;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ACCOUNT BOOK</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="head background-image" [style.background-image]="'url(assets/img/book-cover/'+book.picture+'.jpg)'">
+    <div class="mask">
+      <div class="left-text">
+        <ion-input class="plain" [(ngModel)]="book.name"></ion-input>
+        <a class="rate">CNY ></a>
+      </div>
+      <div class="right-avatar">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="switch">
+    <a [class.active]="currentTab=='info'" (click)="currentTab='info'">INFO</a>
+    <a [class.active]="currentTab=='remark'" (click)="currentTab='remark'">REMARK</a>
+  </div>
+
+  <div *ngIf="currentTab=='info'">
+    <ion-list>
+      <ion-item>
+        <ion-label>DATE</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="book.date"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <div style="height: 1rem;background-image: linear-gradient(89deg, #9cb8d6 10%, #aaafdb 18%, #abaae1 29%, #b4a9e7 51%,
+     #e0c5f4 82%);"></div>
+    <ion-list>
+      <ion-list-header>
+        ACCOUNT BOOKS
+      </ion-list-header>
+      <ion-item>
+        <ng-container *ngFor="let b of books">
+          <button ion-button small round [outline]="book.associatedBookIds.indexOf(b.id)<0" (click)="toggleAssociatedBook(b)" *ngIf="b.id!=book.id">{{b.name}}</button>
+        </ng-container>
+      </ion-item>
+    </ion-list>
+    <div style="height: 1rem;background-image: linear-gradient(89deg, #8ba4d7 10%, #8b98db 18%, #9490e1 29%, #b398e7 51%,
+     #d9a0f4 82%);"></div>
+    <ion-list>
+      <ion-list-header>
+        PARTICIPANTS
+      </ion-list-header>
+      <ion-item (click)="test()">
+        AAA
+      </ion-item>
+      <ion-item (click)="test()">
+        AAA
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="currentTab=='remark'" class="remark">
+    <div>
+      <ion-icon name="camera"></ion-icon>
+    </div>
+    <div>
+      <ion-icon name="mic"></ion-icon>
+    </div>
+  </div>
+
+</ion-content>
